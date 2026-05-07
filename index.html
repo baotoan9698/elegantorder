@@ -6,7 +6,8 @@
     <title>Elegant Flower Shop - Order Calendar</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/jpeg" href="Favicon.jpg">
+    <link rel="apple-touch-icon" href="Favicon.jpg">
 
     <!-- Apple Touch Icon (Add to Home Screen) -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -1243,47 +1244,6 @@
             visibleCount = ORDERS_PER_PAGE;
             renderOrders();
         });
-
-        // ===== GENERATE APPLE TOUCH ICON =====
-        (function() {
-            const canvas = document.createElement('canvas');
-            canvas.width = 180;
-            canvas.height = 180;
-            const ctx = canvas.getContext('2d');
-
-            // Gradient background
-            const grad = ctx.createLinearGradient(0, 0, 180, 180);
-            grad.addColorStop(0, '#FFB6C1');
-            grad.addColorStop(1, '#FF69B4');
-
-            // Rounded rect
-            const r = 36;
-            ctx.beginPath();
-            ctx.moveTo(r, 0);
-            ctx.lineTo(180 - r, 0);
-            ctx.quadraticCurveTo(180, 0, 180, r);
-            ctx.lineTo(180, 180 - r);
-            ctx.quadraticCurveTo(180, 180, 180 - r, 180);
-            ctx.lineTo(r, 180);
-            ctx.quadraticCurveTo(0, 180, 0, 180 - r);
-            ctx.lineTo(0, r);
-            ctx.quadraticCurveTo(0, 0, r, 0);
-            ctx.closePath();
-            ctx.fillStyle = grad;
-            ctx.fill();
-
-            // Emoji
-            ctx.font = '100px sans-serif';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillText('🌸', 90, 95);
-
-            // Set as apple-touch-icon
-            const link = document.createElement('link');
-            link.rel = 'apple-touch-icon';
-            link.href = canvas.toDataURL('image/png');
-            document.head.appendChild(link);
-        })();
 
         // ===== INIT =====
         renderCalendar();
